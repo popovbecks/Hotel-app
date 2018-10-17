@@ -1,0 +1,10 @@
+h3 {
+  text-align: center;
+  color: blue;
+}
+
+p {
+  color: sandybrown;
+  display: inline-block;
+  margin-right: 40px;
+}
