@@ -1,4 +1,11 @@
-<h2>Weather forecast</h2>
-<p>Temperature: {{weather.temperature}}</p>
-<p>Wind: {{weather.wind}}</p>
-<mat-icon style="color: yellow; font-size: 60px">{{weather.icon}}</mat-icon>
+
+<mat-card class="weather-card d-flex justify-content-around">
+  <mat-card-content>
+    <mat-icon style="color: yellow; font-size: 90px">{{hotel.weather.icon}}</mat-icon>
+    <p>temp {{hotel.weather.temperature}} C</p>
+  </mat-card-content>
+  <mat-card-actions d-flex>
+    <mat-icon style="color: white; font-size: 90px">waves</mat-icon>
+    <p>{{hotel.weather.water}} C</p>
+  </mat-card-actions>
+</mat-card>

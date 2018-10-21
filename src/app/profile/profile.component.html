@@ -1,4 +1,32 @@
-<h3>Profile</h3>
-<p>Followers: {{profile.followers}}</p>
-<p>Following: {{profile.following}}</p>
-<img mat-card-md-image src={{profile.photo}}>
+<mat-card class="profile-card">
+  <mat-card-header class="d-flex flex-column">
+    <div mat-card-avatar>
+      <img class="avatar" [src]="hotel.profile.photo" alt="photo">
+    </div>
+    <mat-card-title class="pt-4">{{hotel.title}}</mat-card-title>
+    <mat-card-subtitle>{{hotel.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <ngb-carousel>
+      <ng-template ngbSlide *ngFor="let img of hotel.photos">
+        <img class="item-img" [src]="img" alt="Random first slide">
+        <div class="carousel-caption">
+          <h3>{{hotel.title}}</h3>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </mat-card-actions>
+  <mat-card-actions>
+    <ngb-rating style="font-size: 40px; color: red" [(rate)]="hotel.stars"></ngb-rating>
+    <hr>
+  </mat-card-actions>
+  <div class="follow d-flex justify-content-between">
+    <div class="follow-item">
+      <p>Followers: {{hotel.profile.followers}}</p>
+    </div>
+    <div class="follow-item">
+      <p>Following: {{hotel.profile.following}}</p>
+    </div>
+  </div>
+
+</mat-card>

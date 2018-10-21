@@ -3,3 +3,11 @@ h2 {
   margin: 0 auto;
   text-align: center;
 }
+.weather-card{
+  background-color: darkslateblue;
+  border-radius: 10px;
+}
+p{
+  font-size: 25px;
+  color: darkorange;
+}

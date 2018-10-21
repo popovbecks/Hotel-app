@@ -1,5 +1,6 @@
 export interface Weather {
     temperature: number;
-    wind: number;
+    water: number;
     icon: string;
 }
+export default Weather;

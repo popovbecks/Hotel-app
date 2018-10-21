@@ -1,3 +1,6 @@
+import {Weather} from "./weather";
+import { Profile } from "./profile";
+
 export interface Hotel {
     id: number;
     title: string;
@@ -6,7 +9,7 @@ export interface Hotel {
     phone: string;
     picture: string;
     photos: string[];
-    weather: object;
-    profile: object;
+    weather: Weather;
+    profile: Profile;
     stars: number;
 }
