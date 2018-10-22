@@ -1,23 +1,38 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>
-            <h1 style="text-align: center; margin: 0 auto; color:aqua">{{hotel.title}}</h1>
-          </mat-card-title>
-          <mat-card-subtitle>{{hotel.description}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src={{hotel.picture}} alt={{hotel.title}}>
-        <img mat-card-image *ngFor="let photo of hotel.photos" src={{photo}} alt={{hotel.title}}>
-        <mat-card-content>
-          <app-weather [weather]="hotel.weather"></app-weather>
-        </mat-card-content>
-        <mat-card-actions>
-          <app-profile [profile]="hotel.profile"></app-profile>
-        </mat-card-actions>
-      </mat-card>
+      <div class="title">
+        <h2>Hotel info widget</h2>
+      </div>
+      <div class="container d-flex justify-content-around align-items-center flex-column">
+        <div class="wrapper d-flex justify-content-between">
+          <div class="hotels-list">
+            <mat-card class="example-card">
+              <mat-card-content>
+                <img class="header-img" mat-card-image src={{currentHotel.picture}} alt={{currentHotel.title}}>
+              </mat-card-content>
+              <mat-card-content>
+                <input type="text" class="form-control" placeholder="Search hotel" [(ngModel)]="searchStr">
+              </mat-card-content>
+              <mat-card-actions>
+                <mat-tab-group style="height: 300px; overflow: scroll">
+                  <mat-tab label="List of hotels">
+                    <mat-list role="list" *ngFor="let hotel of hotels | search: searchStr">
+                      <mat-list-item style="cursor:pointer;" (click)="choiceHotel(hotel)" role="listitem">{{hotel.title}}</mat-list-item>
+                    </mat-list>
+                  </mat-tab>
+                  <mat-tab label="Adress"> {{currentHotel.address}} </mat-tab>
+                  <mat-tab label="Phone"> {{currentHotel.phone}} </mat-tab>
+                </mat-tab-group>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+          <div class="widget-bar d-flex justify-content-around flex-column">
+            <app-weather [hotel]="currentHotel"></app-weather>
+            <app-profile [hotel]="currentHotel"></app-profile>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
