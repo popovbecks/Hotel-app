@@ -15,7 +15,7 @@
                 <input type="text" class="form-control" placeholder="Search hotel" [(ngModel)]="searchStr">
               </mat-card-content>
               <mat-card-actions>
-                <mat-tab-group>
+                <mat-tab-group style="height: 300px; overflow: scroll">
                   <mat-tab label="List of hotels">
                     <mat-list role="list" *ngFor="let hotel of hotels | search: searchStr">
                       <mat-list-item style="cursor:pointer;" (click)="choiceHotel(hotel)" role="listitem">{{hotel.title}}</mat-list-item>

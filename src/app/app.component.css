@@ -1,23 +1,30 @@
 .example-card {
   width: 600px;
+  max-height: 800px;
 }
-.header-img{
+
+.header-img {
   max-height: 300px;
 }
-.wrapper{
+
+.wrapper {
   width: 1100px;
 }
-.title h2{
+
+.title h2 {
   text-align: center;
   color: greenyellow;
   font-size: 50px;
 }
-.container{
+
+.container {
   height: 100%;
 }
-.hotels-list{
+
+.hotels-list {
   width: 400px;
 }
-.widget-bar{
+
+.widget-bar {
   width: 400px;
 }
